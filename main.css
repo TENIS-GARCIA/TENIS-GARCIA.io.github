@@ -8,6 +8,7 @@ body {
 .content {
   width: 100%;
   min-width: 850px;
+  padding: 0 1.5em;
 }
 
 .folder {
