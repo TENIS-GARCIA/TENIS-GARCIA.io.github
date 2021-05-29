@@ -1,6 +1,10 @@
 body {
   margin: 0;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
   min-width: fit-content;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
   min-height: fit-content;
   background: url("images/wood-background.jpg") repeat-y center center fixed;
   background-size: 100% 100%;
@@ -9,6 +13,7 @@ body {
   width: 100%;
   min-width: 850px;
   padding: 0 1.5em;
+  box-sizing: border-box;
 }
 
 .folder {
@@ -73,7 +78,7 @@ body {
   text-align: center;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
   padding: .2em;
-  transition: transform ease-out 1s;
+  transition: transform ease-out 3s;
   transform: translateY(0);
 }
 .folder .guest.out {
@@ -95,7 +100,11 @@ body {
   font-weight: bold;
   outline: none;
 }
-@keyframes example {
+@-webkit-keyframes anima {
+  0%   {left:470px; transform: rotateY(0);}
+  100% {left:-50px; transform: rotateY(180deg);}
+}
+@keyframes anima {
   0%   {left:470px; transform: rotateY(0);}
   100% {left:-50px; transform: rotateY(180deg);}
 }
@@ -104,8 +113,10 @@ body {
   z-index: 4;
   transform: rotateY(180deg);
   color: #c62828;
-  animation-name: example;
-  animation-duration: 2s;
+  -webkit-animation-name: anima;
+          animation-name: anima;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
 }
 .folder .right-front {
   width: 350px;
@@ -176,13 +187,21 @@ body {
   height:40%;
   position:absolute;
   border-radius:50%;
-  animation:spin 2s ease infinite;
+  -webkit-animation:spin 2s ease infinite;
+          animation:spin 2s ease infinite;
 }
 
-.load :first-child{background:#19A68C;animation-delay:-1.5s}
-.load :nth-child(2){background:#F63D3A;animation-delay:-1s}
-.load :nth-child(3){background:#FDA543;animation-delay:-0.5s}
+.load :first-child{background:#19A68C;-webkit-animation-delay:-1.5s;animation-delay:-1.5s}
+.load :nth-child(2){background:#F63D3A;-webkit-animation-delay:-1s;animation-delay:-1s}
+.load :nth-child(3){background:#FDA543;-webkit-animation-delay:-0.5s;animation-delay:-0.5s}
 .load :last-child{background:#193B48}
+
+@-webkit-keyframes spin{
+  0%,100%{transform:translateX(200%)}
+  25%{transform:translateY(200%)}
+  50%{transform:translateX(0)}
+  75%{transform:translateY(0)}
+}
 
 @keyframes spin{
   0%,100%{transform:translateX(200%)}
