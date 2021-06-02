@@ -1,30 +1,33 @@
+window.onload = function(){
+  document.querySelector(".preloader").style.display = "none";
+}
+
 let b64 = window.location.search.substr(3);
 let total = b64.substr(0, 1);
 let nameGuest = decodeURIComponent(escape(window.atob( b64.substr(1) )));
+if (nameGuest === '') {
+  nameGuest = 'Fam. Garduño Zuñiga'
+}
 document.querySelector(".guest").innerHTML = nameGuest;
-console.log(total, nameGuest);
 
-
-/* setTimeout(function () {
-  document.querySelector(".folder").classList.add("closed");
-}, 3000); */
-
+let file;
 switch (parseInt(total)) {
   case 2:
-    document.querySelector(".right-back img").setAttribute("src", "images/paper-two-2.jpg");
+    file = '2';
     break;
   case 3:
-    document.querySelector(".right-back img").setAttribute("src", "images/paper-two-3.jpg");
+    file = '3';
     break;
   case 4:
-    document.querySelector(".right-back img").setAttribute("src", "images/paper-two-4.jpg");
+    file = '4';
     break;
-  case 4:
-    document.querySelector(".right-back img").setAttribute("src", "images/paper-two-5.jpg");
+  case 5:
+    file = '5';
     break;
   default:
-    document.querySelector(".right-back img").setAttribute("src", "images/paper-two-1.jpg");
+    file = '1';
 }
+document.querySelector(".right-back img").setAttribute("src", "images/paper-two-" + file + ".jpg");
 
 document.querySelector("button").addEventListener("click", function () {
   document.querySelector(".guest").classList.add("out");
