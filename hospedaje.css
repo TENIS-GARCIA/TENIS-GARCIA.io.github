@@ -1,0 +1,76 @@
+body {
+  background: url('https://static.mesaderegalos.liverpool.mx/assets/images/boda02/patron.png');
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  .container { width: 100%; }
+}
+@media (min-width: 768px) {
+  .container { width: 750px; }
+}
+@media (min-width: 992px) {
+  .container { width: 970px; }
+}
+@media (min-width: 1200px) {
+  .container { width: 1170px; }
+}
+h1 {
+  background: #e8e5de;
+  color: #3c3a3a;
+  text-align: center;
+  padding: 0.5em;
+}
+.hotels:nth-child(odd) {
+  background: #fff;
+}
+.hotels:nth-child(even) {
+  background: #e8e5de;
+}
+article {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+@media (max-width: 767px) {
+  article { flex-direction: column; }
+}
+@media (min-width: 768px) {
+  article { flex-direction: column; }
+}
+@media (min-width: 992px) {
+  article { flex-direction: row; }
+}
+@media (min-width: 1200px) {
+  article { flex-direction: row; }
+}
+article > div {
+ margin: 1em 0.5em;
+ padding: 0.5em;
+ border: 1px solid rgba(0,0,0,.12);
+ background: #fff;
+ border-radius: 4px;
+ width: calc(100% - 2.2em);
+}
+article .description {
+  color: #3c3a3a;
+}
+article .description ul.desc-1 li {
+  list-style: none;
+  padding: 0;
+}
+article .description ul.desc-1 span {
+  display: inline-block;
+  width: 70px;
+  font-weight: bold;
+  text-align: right;
+  margin-right: 10px;
+}
+article .map p {
+  text-align: right;
+  margin: 0;
+}
+article .map iframe {
+  width: 100% !important;
+}
