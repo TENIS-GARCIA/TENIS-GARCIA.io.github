@@ -12,13 +12,13 @@ document.querySelector('#remainingDays').innerHTML = textRemainingTime;
 
 function openMap (elem) {
   let mapLink = elem.dataset.link;
-  console.log(mapLink);
+  alert(navigator.platform);
   if( (navigator.platform.indexOf('iPhone') != -1) 
     || (navigator.platform.indexOf('iPod') != -1)
     || (navigator.platform.indexOf('iPad') != -1)
     || (navigator.platform.indexOf('Android') != -1)) {
-      window.open('maps://' + mapLink);
+      window.open('geo:' + mapLink);
   } else {
-    window.open('https://' + mapLink);
+    window.open('https://maps.google.com/maps?q=' + mapLink);
   }
 }
