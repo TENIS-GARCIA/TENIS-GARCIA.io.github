@@ -16,7 +16,8 @@ function openMap (elem) {
   if( (navigator.platform.indexOf('iPhone') != -1) 
     || (navigator.platform.indexOf('iPod') != -1)
     || (navigator.platform.indexOf('iPad') != -1)
-    || (navigator.platform.indexOf('Android') != -1)) {
+    || (navigator.platform.indexOf('Android') != -1)
+    || (navigator.platform.indexOf('Linux') != -1)) {
       window.open('geo:' + mapLink);
   } else {
     window.open('https://maps.google.com/maps?q=' + mapLink);
