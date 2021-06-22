@@ -12,7 +12,6 @@ document.querySelector('#remainingDays').innerHTML = textRemainingTime;
 
 function openMap (elem) {
   let mapLink = elem.dataset.link;
-  alert(navigator.platform);
   if( (navigator.platform.indexOf('iPhone') != -1) 
     || (navigator.platform.indexOf('iPod') != -1)
     || (navigator.platform.indexOf('iPad') != -1)
