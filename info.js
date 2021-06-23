@@ -1,7 +1,7 @@
 let now = new Date();
 let partyDate = new Date(2021,6,17);
 let diffTime = partyDate.getTime() - now.getTime();
-let days = Math.trunc(diffTime / (1000 * 3600 * 24));
+let days = Math.trunc(diffTime / (1000 * 3600 * 24)) + 1;
 let textRemainingTime;
 if (days >= 0) {
   textRemainingTime = `${days} días para el evento`;
